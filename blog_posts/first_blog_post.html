@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>First Blog Post</title>
+    <title>Blog</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/animate.css">
     <link rel="stylesheet" href="../css/bootstrap.css">
@@ -87,8 +87,10 @@
 </div>
 
 <script>
-    const blogId = 'first_blog_post'; // Replace with logic to get ID dynamically
-    fetch('content.json')
+    const params = new URLSearchParams(window.location.search);
+    const blogId = params.get('id'); // Get the blog ID from the query parameter
+
+    fetch('/content.json')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok ' + response.statusText);
@@ -101,7 +103,7 @@
                 document.getElementById('blog-title').textContent = blog.title;
                 document.getElementById('blog-subtitle').textContent = blog.subtitle;
                 document.getElementById('blog-meta').textContent = `Posted on ${blog.date} by ${blog.author}`;
-                document.getElementById('blog-content').innerHTML = `<p>${blog.content}</p>`;
+                document.getElementById('blog-content').innerHTML = blog.content;
                 document.getElementById('cover-photo').style.backgroundImage = `url('${blog.image}')`;
             } else {
                 document.getElementById('fh5co-main').innerHTML = '<p>Blog not found.</p>';
