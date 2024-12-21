@@ -13,24 +13,34 @@
         .fh5co-heading {
             font-size: 2.5em;
             color: #333;
+            text-align: center;
             margin-bottom: 10px;
         }
         .fh5co-subheading {
             font-size: 1.5em;
             font-weight: 300;
             color: #666;
+            text-align: center;
             margin-bottom: 20px;
         }
         .fh5co-cover {
+            background-image: url('../images/blogs/first_blog_post_image.jpg');
             background-size: cover;
             background-position: center;
             height: 300px;
-            margin-bottom: 30px;
+            width: 100%;
+            margin: 0 auto 30px auto;
             border-radius: 8px;
+        }
+        .fh5co-narrow-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
         }
         .fh5co-narrow-content small {
             color: #888;
             display: block;
+            text-align: center;
             margin-bottom: 20px;
         }
         .fh5co-narrow-content p {
@@ -64,7 +74,7 @@
     <!-- Main Content -->
     <div id="fh5co-main">
         <!-- Cover Photo -->
-        <div class="fh5co-cover" style="background-image: url('../images/blogs/first_blog_post_image.jpg');"></div>
+        <div class="fh5co-cover"></div>
 
         <!-- Blog Post Content -->
         <div class="fh5co-narrow-content">
@@ -74,11 +84,6 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod nisi in urna volutpat, a tincidunt urna sodales. Cras quis velit nec lacus ullamcorper consectetur. Vivamus viverra lacinia libero vel sodales.</p>
             <p>Ut a dictum nisi, nec pharetra quam. Integer non tortor nec neque pellentesque sollicitudin sed non augue. Praesent suscipit quam vel sem feugiat, ac vehicula urna interdum. Nulla facilisi. Phasellus gravida magna eu orci porttitor, non aliquet turpis ultrices.</p>
             <p>Quisque tincidunt risus sit amet diam aliquet, sit amet tempor sapien blandit. Etiam pulvinar libero eu velit fermentum, sit amet dignissim felis aliquet. Ut id hendrerit magna, sit amet gravida mi.</p>
-        </div>
-
-        <!-- Back to Blog -->
-        <div class="fh5co-narrow-content">
-            <p><a href="../blog.html" class="btn btn-primary">Back to Blog</a></p>
         </div>
     </div>
 </div>
