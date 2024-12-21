@@ -74,19 +74,32 @@
 
     <!-- Main Content -->
     <div id="fh5co-main">
-        <!-- Cover Photo -->
-        <div class="fh5co-cover"></div>
-
-        <!-- Blog Post Content -->
         <div class="fh5co-narrow-content">
-            <h1 class="fh5co-heading">My First Blog Post</h1>
-            <h3 class="fh5co-subheading">An exciting journey begins</h3>
-            <small>Posted on January 1, 2024, by Koen Ceton</small>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod nisi in urna volutpat, a tincidunt urna sodales. Cras quis velit nec lacus ullamcorper consectetur. Vivamus viverra lacinia libero vel sodales.</p>
-            <p>Ut a dictum nisi, nec pharetra quam. Integer non tortor nec neque pellentesque sollicitudin sed non augue. Praesent suscipit quam vel sem feugiat, ac vehicula urna interdum. Nulla facilisi. Phasellus gravida magna eu orci porttitor, non aliquet turpis ultrices.</p>
-            <p>Quisque tincidunt risus sit amet diam aliquet, sit amet tempor sapien blandit. Etiam pulvinar libero eu velit fermentum, sit amet dignissim felis aliquet. Ut id hendrerit magna, sit amet gravida mi.</p>
+            <h1 id="blog-title"></h1>
+            <h3 id="blog-subtitle"></h3>
+            <small id="blog-meta"></small>
+            <div id="blog-content"></div>
         </div>
     </div>
+    
+    <script>
+        const blogId = 'first_blog_post'; // Replace with logic to get ID dynamically
+        fetch('../content.json')
+            .then(response => response.json())
+            .then(data => {
+                const blog = data.blogs.find(b => b.id === blogId);
+                if (blog) {
+                    document.getElementById('blog-title').textContent = blog.title;
+                    document.getElementById('blog-subtitle').textContent = blog.subtitle;
+                    document.getElementById('blog-meta').textContent = `Posted on ${blog.date} by ${blog.author}`;
+                    document.getElementById('blog-content').innerHTML = `<p>${blog.content}</p>`;
+                } else {
+                    document.getElementById('fh5co-main').innerHTML = '<p>Blog not found.</p>';
+                }
+            })
+            .catch(error => console.error('Error fetching blog data:', error));
+    </script>
+
 </div>
 
 <!-- Scripts -->
