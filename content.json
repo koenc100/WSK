@@ -1,0 +1,32 @@
+{
+    "blogs": [
+        {
+            "id": "first_blog_post",
+            "title": "My First Blog Post",
+            "subtitle": "An exciting journey begins",
+            "date": "January 1, 2024",
+            "author": "Koen Ceton",
+            "image": "../images/blogs/first_blog_post_image.jpg",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod nisi in urna volutpat..."
+        },
+        {
+            "id": "second_blog_post",
+            "title": "Exploring New Ideas",
+            "subtitle": "A deep dive into creativity",
+            "date": "February 15, 2024",
+            "author": "Koen Ceton",
+            "image": "../images/blogs/second_blog_post_image.jpg",
+            "content": "Integer non tortor nec neque pellentesque sollicitudin sed non augue. Praesent suscipit quam vel sem feugiat..."
+        }
+    ],
+    
+    "projects": [
+        {
+            "id": "project_1",
+            "title": "My First Project",
+            "description": "Building something exciting and meaningful.",
+            "date": "December 10, 2023",
+            "image": "../images/projects/project_1.jpg"
+        }
+    ]
+}

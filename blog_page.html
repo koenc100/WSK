@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Blog Page</title>
+    <title>Blog Page</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/bootstrap.css">
@@ -31,7 +31,6 @@
             max-width: 800px;
             margin: 0 auto 30px auto;
             border-radius: 8px;
-            background-color: #f5f5f5;
         }
         .fh5co-narrow-content {
             max-width: 800px;
@@ -74,27 +73,46 @@
 
     <!-- Main Content -->
     <div id="fh5co-main">
-        <!-- Cover Photo -->
         <div id="cover-photo" class="fh5co-cover"></div>
-
-        <!-- Blog Post Content -->
         <div class="fh5co-narrow-content">
-            <h1 class="fh5co-heading">Static Blog Title</h1>
-            <h3 class="fh5co-subheading">Static Subtitle for the Blog</h3>
-            <small>Posted on January 1, 2024 by Koen Ceton</small>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod nisi in urna volutpat, a tincidunt urna sodales. Cras quis velit nec lacus ullamcorper consectetur. Vivamus viverra lacinia libero vel sodales.</p>
-            <p>Ut a dictum nisi, nec pharetra quam. Integer non tortor nec neque pellentesque sollicitudin sed non augue. Praesent suscipit quam vel sem feugiat, ac vehicula urna interdum. Nulla facilisi. Phasellus gravida magna eu orci porttitor, non aliquet turpis ultrices.</p>
-            <p>Quisque tincidunt risus sit amet diam aliquet, sit amet tempor sapien blandit. Etiam pulvinar libero eu velit fermentum, sit amet dignissim felis aliquet. Ut id hendrerit magna, sit amet gravida mi.</p>
+            <h1 id="blog-title" class="fh5co-heading">Loading...</h1>
+            <h3 id="blog-subtitle" class="fh5co-subheading"></h3>
+            <small id="blog-meta"></small>
+            <div id="blog-content"></div>
         </div>
     </div>
 </div>
 
-<!-- Scripts -->
-<script src="js/jquery.min.js"></script>
-<script src="js/jquery.easing.1.3.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.waypoints.min.js"></script>
-<script src="js/jquery.flexslider-min.js"></script>
-<script src="js/main.js"></script>
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const blogId = params.get('id') || 'first_blog_post'; // Default to 'first_blog_post'
+
+    fetch('content.json') // Fetch JSON data
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            const blog = data.blogs.find(b => b.id === blogId);
+            if (blog) {
+                document.getElementById('blog-title').textContent = blog.title;
+                document.getElementById('blog-subtitle').textContent = blog.subtitle;
+                document.getElementById('blog-meta').textContent = `Posted on ${blog.date} by ${blog.author}`;
+                document.getElementById('blog-content').innerHTML = `<p>${blog.content}</p>`;
+                document.getElementById('cover-photo').style.backgroundImage = `url('${blog.image}')`;
+            } else {
+                document.getElementById('blog-title').textContent = 'Blog Not Found';
+                document.getElementById('blog-content').innerHTML = '<p>No blog content available for this ID.</p>';
+            }
+        })
+        .catch(error => {
+            console.error('Error loading blog data:', error);
+            document.getElementById('blog-title').textContent = 'Error Loading Blog';
+            document.getElementById('blog-content').innerHTML = '<p>Unable to load blog content at this time.</p>';
+        });
+</script>
+
 </body>
 </html>
