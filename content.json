@@ -6,8 +6,8 @@
             "subtitle": "An exciting journey begins",
             "date": "January 1, 2024",
             "author": "Koen Ceton",
-            "image": "images/blogs/first_blog_post_image.jpg",
-            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod nisi in urna volutpat..."
+            "image": "/images/blogs/first_blog_post_image.jpg",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id purus massa. Maecenas a consectetur dolor. Proin rutrum euismod egestas. Vivamus aliquet odio non nibh aliquet bibendum. Donec velit eros, vestibulum nec blandit non, pharetra vel ex. Cras porta eget est id lacinia. Nunc mollis egestas risus, in vulputate arcu lacinia ac. Proin tempor ac erat vel convallis. Integer laoreet augue vel dignissim consectetur. Aenean vitae justo vitae mi consectetur cursus sed gravida velit. Nulla purus leo, lacinia at rutrum quis, tempor ut nulla. Aenean congue lacus sit amet massa posuere porttitor. Sed ullamcorper fermentum ligula. Fusce sit amet suscipit elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
         },
         {
             "id": "second_blog_post",
