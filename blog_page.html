@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Blog Page</title>
+    <title>Blog Post</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/bootstrap.css">
@@ -31,6 +31,7 @@
             max-width: 800px;
             margin: 0 auto 30px auto;
             border-radius: 8px;
+            background-color: #f5f5f5;
         }
         .fh5co-narrow-content {
             max-width: 800px;
@@ -73,7 +74,10 @@
 
     <!-- Main Content -->
     <div id="fh5co-main">
+        <!-- Cover Photo -->
         <div id="cover-photo" class="fh5co-cover"></div>
+
+        <!-- Blog Post Content -->
         <div class="fh5co-narrow-content">
             <h1 id="blog-title" class="fh5co-heading">Loading...</h1>
             <h3 id="blog-subtitle" class="fh5co-subheading"></h3>
@@ -84,33 +88,32 @@
 </div>
 
 <script>
+    // Get the blog ID from the URL
     const params = new URLSearchParams(window.location.search);
-    const blogId = params.get('id') || 'first_blog_post'; // Default blog ID
+    const blogId = params.get('id');
 
+    // Fetch the blog data
     fetch('content.json')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.json();
-        })
+        .then(response => response.json())
         .then(data => {
             const blog = data.blogs.find(b => b.id === blogId);
             if (blog) {
+                // Populate the page with blog data
+                document.getElementById('cover-photo').style.backgroundImage = `url('${blog.image}')`;
                 document.getElementById('blog-title').textContent = blog.title;
                 document.getElementById('blog-subtitle').textContent = blog.subtitle;
                 document.getElementById('blog-meta').textContent = `Posted on ${blog.date} by ${blog.author}`;
                 document.getElementById('blog-content').innerHTML = blog.content;
-                document.getElementById('cover-photo').style.backgroundImage = `url('${blog.image}')`;
             } else {
+                // Handle case where blog is not found
                 document.getElementById('blog-title').textContent = 'Blog Not Found';
-                document.getElementById('blog-content').innerHTML = '<p>No blog content available for this ID.</p>';
+                document.getElementById('blog-content').innerHTML = '<p>The requested blog post does not exist.</p>';
             }
         })
         .catch(error => {
             console.error('Error loading blog data:', error);
             document.getElementById('blog-title').textContent = 'Error Loading Blog';
-            document.getElementById('blog-content').innerHTML = '<p>Unable to load blog content at this time.</p>';
+            document.getElementById('blog-content').innerHTML = '<p>Unable to load blog content. Please try again later.</p>';
         });
 </script>
 
