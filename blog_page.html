@@ -3,124 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/flexslider.css">
+    <title>Blog Test</title>
     <style>
-        /* Styling for the blog post */
-        .fh5co-heading {
-            font-size: 2.5em;
-            color: #333;
-            text-align: center;
-            margin-bottom: 10px;
-        }
-        .fh5co-subheading {
-            font-size: 1.5em;
-            font-weight: 300;
-            color: #666;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .fh5co-cover {
-            background-size: cover;
-            background-position: center;
-            height: 400px;
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto 30px auto;
-            border-radius: 8px;
-        }
-        .fh5co-narrow-content {
+        body {
+            font-family: Arial, sans-serif;
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
         }
-        .fh5co-narrow-content small {
-            color: #888;
+        h1, h3 {
+            text-align: center;
+        }
+        #cover-photo {
+            height: 300px;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        small {
+            color: gray;
             display: block;
             text-align: center;
             margin-bottom: 20px;
         }
-        .fh5co-narrow-content p {
+        p {
             line-height: 1.8;
-            color: #444;
             margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
-<div id="fh5co-page">
-    <!-- Sidebar -->
-    <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
-    <aside id="fh5co-aside" role="complementary" class="border js-fullheight">
-        <h1 id="fh5co-logo"><a href="index.html">Koen Ceton</a></h1>
-        <nav id="fh5co-main-menu" role="navigation">
-            <ul>
-                <li><a href="index.html">Main</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="portfolio.html">Projects</a></li>
-                <li><a href="about.html">Curriculum Vitae</a></li>
-            </ul>
-        </nav>
-        <div class="fh5co-footer">
-            <ul>
-                <li><a href="#"><i class="icon-linkedin2"></i></a></li>
-            </ul>
-        </div>
-    </aside>
+    <div id="cover-photo"></div>
+    <h1 id="blog-title">Loading...</h1>
+    <h3 id="blog-subtitle"></h3>
+    <small id="blog-meta"></small>
+    <div id="blog-content"></div>
 
-    <!-- Main Content -->
-    <div id="fh5co-main">
-        <!-- Cover Photo -->
-        <div id="cover-photo" class="fh5co-cover"></div>
+    <script>
+        // Test with a fixed blog ID for simplicity
+        const blogId = "first_blog_post";
 
-        <!-- Blog Post Content -->
-        <div class="fh5co-narrow-content">
-            <h1 id="blog-title" class="fh5co-heading"></h1>
-            <h3 id="blog-subtitle" class="fh5co-subheading"></h3>
-            <small id="blog-meta"></small>
-            <div id="blog-content"></div>
-        </div>
-    </div>
-</div>
-
-<script>
-    const params = new URLSearchParams(window.location.search);
-    const blogId = params.get('id'); // Get the blog ID from the query parameter
-
-    fetch('content.json') // Adjusted to fetch content.json from the root
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok ' + response.statusText);
-            }
-            return response.json();
-        })
-        .then(data => {
-            const blog = data.blogs.find(b => b.id === blogId);
-            if (blog) {
-                document.getElementById('blog-title').textContent = blog.title;
-                document.getElementById('blog-subtitle').textContent = blog.subtitle;
-                document.getElementById('blog-meta').textContent = `Posted on ${blog.date} by ${blog.author}`;
-                document.getElementById('blog-content').innerHTML = blog.content;
-                document.getElementById('cover-photo').style.backgroundImage = `url('${blog.image}')`;
-            } else {
-                document.getElementById('fh5co-main').innerHTML = '<p>Blog not found.</p>';
-            }
-        })
-        .catch(error => {
-            console.error('Error fetching blog data:', error);
-            document.getElementById('fh5co-main').innerHTML = '<p>Error loading blog content. Please try again later.</p>';
-        });
-</script>
-
-<!-- Scripts -->
-<script src="js/jquery.min.js"></script>
-<script src="js/jquery.easing.1.3.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.waypoints.min.js"></script>
-<script src="js/jquery.flexslider-min.js"></script>
-<script src="js/main.js"></script>
+        // Fetch the JSON file
+        fetch('content.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Fetched data:', data); // Log the fetched data
+                const blog = data.blogs.find(b => b.id === blogId);
+                if (blog) {
+                    document.getElementById('blog-title').textContent = blog.title;
+                    document.getElementById('blog-subtitle').textContent = blog.subtitle;
+                    document.getElementById('blog-meta').textContent = `Posted on ${blog.date} by ${blog.author}`;
+                    document.getElementById('blog-content').innerHTML = blog.content;
+                    document.getElementById('cover-photo').style.backgroundImage = `url('${blog.image}')`;
+                } else {
+                    document.getElementById('blog-title').textContent = 'Blog Not Found';
+                    document.getElementById('blog-content').innerHTML = '<p>The blog content could not be located.</p>';
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching blog data:', error);
+                document.getElementById('blog-title').textContent = 'Error';
+                document.getElementById('blog-content').innerHTML = '<p>Error loading content. Please check your setup.</p>';
+            });
+    </script>
 </body>
 </html>
