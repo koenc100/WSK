@@ -1,0 +1,65 @@
+{
+    "blogs": [
+        {
+            "id": "first_blog_post",
+            "title": "How big money is past all shame",
+            "subtitle": "The latest US election has shown us that big money has taken the next step in its influence, now they are not behind the politicians anymore, they are the politicians.",
+            "date": "December 10, 2024",
+            "author": "Koen Ceton",
+            "image": "images/blogs/first_blog_post_image.jpg",
+            "content": "<p>So, here we are in my first every blog post, or colummn, or whatever. Writing I've always liked, as it allows you to think, process thoughs and form an opinion. </p><p>This should be the new paragraph if everything works corretly.</p>"
+        },
+        {
+            "id": "second_blog_post",
+            "title": "Exploring New Ideas",
+            "subtitle": "A deep dive into creativity",
+            "date": "February 15, 2024",
+            "author": "Koen Ceton",
+            "image": "images/blogs/second_blog_post_image.jpg",
+            "content": "<p>Integer non tortor nec neque pellentesque sollicitudin sed non augue. Praesent suscipit quam vel sem feugiat...</p>"
+        },
+        {
+            "id": "third_blog_post",
+            "title": "The Future of Technology",
+            "subtitle": "How AI and machine learning are shaping our world",
+            "date": "March 20, 2024",
+            "author": "Koen Ceton",
+            "image": "images/blogs/third_blog_post_image.jpg",
+            "content": "<p>Artificial intelligence is no longer a futuristic concept. It's here, and it's changing the way we live and work.</p>"
+        },
+        {
+            "id": "fourth_blog_post",
+            "title": "Sustainability in Design",
+            "subtitle": "Creating eco-friendly solutions for modern problems",
+            "date": "April 25, 2024",
+            "author": "Koen Ceton",
+            "image": "images/blogs/fourth_blog_post_image.jpg",
+            "content": "<p>Sustainability is no longer optional. It's a necessity for businesses and individuals alike.</p>"
+        },
+        {
+            "id": "fifth_blog_post",
+            "title": "The Power of Storytelling",
+            "subtitle": "Why stories are essential for human connection",
+            "date": "May 30, 2024",
+            "author": "Koen Ceton",
+            "image": "images/blogs/fifth_blog_post_image.jpg",
+            "content": "<p>Stories have the power to inspire, educate, and connect us on a deeper level.</p>"
+        }
+    ],
+    "projects": [
+        {
+            "id": "project_1",
+            "title": "My First Project",
+            "description": "Building something exciting and meaningful.",
+            "date": "December 10, 2023",
+            "image": "images/projects/project_1.jpg"
+        },
+        {
+            "id": "project_2",
+            "title": "Another Project",
+            "description": "Another exciting project.",
+            "date": "January 15, 2024",
+            "image": "images/projects/project_2.jpg"
+        }
+    ]
+}

@@ -1,0 +1,41 @@
+# Blog Posts Overview
+
+1. **Title:** How big money is past all shame  
+   **Subtitle:** The latest US election has shown us that big money has taken the next step in its influence, now they are not behind the politicians anymore, they are the politicians.  
+   **Date:** December 10, 2024  
+   **Author:** Koen Ceton  
+   **Image:** images/blogs/first_blog_post_image.jpg  
+   **Content Preview:**  
+   So, here we are in my first ever blog post, or column, or whatever. Writing I've always liked, as it allows you to think, process thoughts, and form an opinion.  
+   This should be the new paragraph if everything works correctly.  
+
+2. **Title:** Exploring New Ideas *(Placeholder)*  
+   **Subtitle:** A deep dive into creativity  
+   **Date:** February 15, 2024  
+   **Author:** Koen Ceton  
+   **Image:** images/blogs/first_blog_post_image.jpg  
+   **Content Preview:**  
+   Integer non tortor nec neque pellentesque sollicitudin sed non augue. Praesent suscipit quam vel sem feugiat...  
+
+3. **Title:** The Future of Technology *(Placeholder)*  
+   **Subtitle:** How AI and machine learning are shaping our world  
+   **Date:** March 20, 2024  
+   **Author:** Koen Ceton  
+   **Image:** images/blogs/first_blog_post_image.jpg  
+   **Content Preview:**  
+   Artificial intelligence is no longer a futuristic concept. It's here, and it's changing the way we live and work.  
+
+---
+
+# Project Overview
+
+1. **Title:** Automatic Curtain of the Future  
+   **Subtitle:** The future is here, one can now close and open its curtains at the clap of a hand, handing sunlight to your face.  
+   **Date:** December 10, 2024  
+   **Author:** Koen Ceton  
+   **Image:** images/projects/automatic_curtain/full_picture.jpg  
+   **Extra Images:**  
+   - images/projects/automatic_curtain/mechanics.png  
+   - images/projects/automatic_curtain/full_picture.jpg  
+
+   **Content File:** text/projects/automatic_curtain.txt  
