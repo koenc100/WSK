@@ -1,3 +1,25 @@
+README of the website code. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------------
 
 TITLE: 
 Marble - Fully Responsive Free HTML5 template
@@ -8,7 +30,6 @@ DESIGNED & DEVELOPED by FREEHTML5.co
 Website: http://freehtml5.co/
 Twitter: http://twitter.com/fh5co
 Facebook: http://facebook.com/fh5co
-
 
 CREDITS:
 
