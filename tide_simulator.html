@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Tide Simulator - Koen Ceton</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Interactive Solar System Simulation with Tidal Graphs" />
+		<meta name="keywords" content="Solar System, Tides, VPython, Simulation, Koen Ceton" />
+		<meta name="author" content="Koen Ceton" />
+
+		<!-- Stylesheets and Scripts -->
+		<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+		<link rel="stylesheet" href="css/animate.css">
+		<link rel="stylesheet" href="css/icomoon.css">
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/flexslider.css">
+		<link rel="stylesheet" href="css/style.css">
+
+		<script src="js/modernizr-2.6.2.min.js"></script>
+		<!--[if lt IE 9]>
+		<script src="js/respond.min.js"></script>
+		<![endif]-->
+		<style>
+			/* Style for the media container */
+			.media-container {
+				text-align: center;
+				margin: 30px 0;
+			}
+			.media-container img {
+				max-width: 100%;
+				height: auto;
+				margin-bottom: 20px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="fh5co-page">
+			<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+
+			<!-- Sidebar/Navigation -->
+			<aside id="fh5co-aside" role="complementary" class="border js-fullheight">
+				<h1 id="fh5co-logo">
+					<a href="index.html">Koen Ceton</a>
+				</h1>
+				<nav id="fh5co-main-menu" role="navigation">
+					<ul>
+						<li><a href="index.html">Main</a></li>
+						<li><a href="blog_overview.html">Blog</a></li>
+						<li class="fh5co-active"><a href="portfolio.html">Projects</a></li>
+						<li><a href="about.html">Curriculum Vitae</a></li>
+					</ul>
+				</nav>
+				<div class="fh5co-footer">
+					<p><span>Designed by Koen Ceton</span></p>
+					<ul>
+						<li>
+							<a href="https://www.linkedin.com/in/koen-ceton/" target="_blank">
+								<i class="icon-linkedin2"></i>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</aside>
+
+			<!-- Main Content -->
+			<div id="fh5co-main">
+				<div class="fh5co-narrow-content">
+					<!-- Container for Cover Image, Title, Subtitle, Date/Author, and Blog Text -->
+					<div class="row animate-box" data-animate-effect="fadeInLeft">
+						<!-- Cover Photo -->
+						<div class="col-sm-12 col-md-8 col-md-offset-2">
+							<img 
+								src="images/projects/tide_sim/cover_photo_projects_tide.png"
+								alt="Tide Simulator Cover"
+								style="width: 100%; margin: 0 auto; display: block; border-radius: 5px;"
+							>
+						</div>
+
+						<!-- Title & Subtitle -->
+						<div class="col-sm-12 col-md-8 col-md-offset-2 text-center" style="margin-top: 30px; margin-bottom: 30px;">
+							<h1 style="margin-bottom: 10px;">Tide Simulator</h1>
+							<h3 style="font-weight: 400; margin-bottom: 10px;">
+								An Interactive Solar System Simulation with Tidal Graphs
+							</h3>
+							<!-- Date & Author in smaller, gray-ish font -->
+							<div style="font-size: 0.9em; color: #777;">
+								February 5, 2025 &nbsp;|&nbsp; by Koen Ceton
+							</div>
+						</div>
+
+						<hr>
+
+						<!-- Blog Post / Project Description -->
+						<div class="col-sm-12 col-md-8 col-md-offset-2" style="text-align: left;">
+							<p>
+								<strong>About the Tide Simulator Project:</strong><br>
+								Welcome to the interactive tide simulator! This think takes, again, a giant, absolute enormous leep for mankind. We can do all types of thinks now, but the bottom line is; based on the location of the sun and moon, we can plot an estimation of the height of the tides for any place in the world which has a coordinate, so indeed anyplace in the world! You want to try? visit: <a href="https://github.com/koenc100/tide_simulation" target="_blank">GitHub</a> 
+							</p>
+							<p>
+								The simulation includes:
+							</p>
+							<ul>
+                                <li>Not only can we see the location of the earth (orbiting and rotating), sun (a stationary, glowing sphere) and moon (in an elliptical, 5°‑inclined orbit) combined. We can navigate the space, see their past orbit, their actual size and a bit more usefull size.</li>
+                                <li>We can speed up, slow down and even fully stop time. Also showing the seasons and moon seasons </li>
+								<li>Dynamic tidal computations that update in real time as the positions of the Earth, Moon, and Sun change. Very cool.</li>
+								<li>Real-time graphs that plot the tidal effects of the Moon, the Sun, and their combined influence. Also pretty cool.</li>
+							</ul>
+							<p>
+                                In Video 1 we see a small demo and in Figure 1 we see an example of a weekly tidal flow somewhere in the red sea. Now interestingly enough, The moon weighs 2x2 times as heavy as the sun considering tidal heights. As we can see roughly in the graph. What's also interesting is that the tidal flows depend heavily on coastal an geo-structures, meaning the shape of the surface of the ocean. For instance, the tides differ around 20-30 cm in the meddetiranian sea because of this and its isolated position. On the other hand, the Bay of Fundy in Canada has a tidal range of 16 meters! Here is a video: <a href="https://www.bayoffundy.com/about/highest-tides/" target="_blank">High tides</a> So, its waaaay more complex to model than one might think. Here are some of my roughest assumptions: 
+							</p>
+                            <ul>
+                                <li><strong>Equilibrium Tide Model:</strong> The simulation assumes that the ocean’s response to tidal forces is instantaneous, meaning the tide is always in equilibrium with the current positions of the Moon and Sun. In reality, inertia, friction, and resonances cause delays and more complex behavior.</li>
+                                <li><strong>Spherical Earth:</strong> The Earth is modeled as a perfect sphere with a constant radius. This ignores variations such as the equatorial bulge and the effects of variable ocean depths and coastlines.</li>
+                                <li><strong>Circular Earth Orbit:</strong> The Earth’s orbit around the Sun is assumed to be perfectly circular, even though the real orbit is slightly elliptical, which can cause minor variations in solar tidal forces.</li>
+                                <li><strong>Simplified Moon Orbit:</strong> Although the Moon’s orbit is modeled as elliptical (with an eccentricity of 0.0549) and inclined by 5° relative to the Earth’s orbital plane, the simulation uses a simplified angular parameterization that does not fully capture all orbital perturbations or the differences between mean and true anomalies.</li>
+                                <li><strong>Linear Addition of Tidal Contributions:</strong> The model adds the tidal effects from the Moon and the Sun linearly. In practice, their interactions can be nonlinear and are influenced by additional factors such as resonance effects in ocean basins.</li>
+                              </ul>
+							<p>
+								<strong>Future Directions:</strong><br>
+								The next step in development is to visualize the water on Earth’s surface with exaggerated tidal effects,
+								making areas of high and low tide more prominent. Could be cool but I will probably leave it at this.
+							</p>
+						</div>
+
+						<hr>
+
+						<!-- Media Section: Video and Figure -->
+						<div class="col-sm-12 col-md-8 col-md-offset-2", style="text-align: center";>
+							<img src="images/projects/tide_sim/tide_sim.gif.gif" alt="60-second simulation demo">
+                            <p><strong>Video 1:</strong> 60-second simulation demo</p>
+							<img src="images/projects/tide_sim/tide_graph.png" alt="Tidal Graph Overview">
+                            <p><strong>Figure 1:</strong> Tidal graph overview</p>
+						</div>
+
+					</div> <!-- end row -->
+				</div> <!-- END fh5co-narrow-content -->
+			</div> <!-- END fh5co-main -->
+		</div> <!-- END fh5co-page -->
+
+		<!-- Scripts -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.easing.1.3.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/jquery.waypoints.min.js"></script>
+		<script src="js/jquery.flexslider-min.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>
