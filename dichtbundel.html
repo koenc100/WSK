@@ -25,6 +25,21 @@
 		<!--[if lt IE 9]>
 		<script src="js/respond.min.js"></script>
 		<![endif]-->
+
+        <!-- Inline style to hide explicit poems by default -->
+        <style>
+            .explicit {
+                display: none;
+            }
+            /* Optional: style for the "alle gedichten" link */
+            #showExplicit {
+                display: inline-block;
+                margin-top: 20px;
+                text-decoration: underline;
+                cursor: pointer;
+                color: #337ab7;
+            }
+        </style>
 	</head>
 	<body>
 		<div id="fh5co-page">
@@ -79,19 +94,19 @@
 							<p>Of zijn carrière pad,</p>
 							<p>Wel doorgroeimogelijkheden had.</p>
 						</div>
-						
+
 						<div class="poem" style="margin-bottom: 100px;">
 							<p>Zouden diplomaten met Duplo spelen,</p>
 							<p>En zouden ze dan de blokken delen?</p>
 							<p>Of zouden ze met twee maten meten?</p>
 							<p>En een van hen tot de dupe heten.</p>
 						</div>
-						
+
 						<div class="poem" style="margin-bottom: 100px;">
-							<p>Bedenk eens voor de gein,</p>
-							<p>Hoe het zou zijn,</p>
-							<p>Als we in plaats van water bij de wijn,</p>
-							<p>De fles in onze reet drukken</p>
+							<p>wie niet weg is, is gezien,</p>
+							<p>wie niet weg is, is niet weggevlogen,</p>
+							<p>wie niet weg is, heeft zichtzelf voorgelogen,</p>
+							<p>wie hier nog is, heeft het voor gezien.</p>
 						</div>
 						
 						<div class="poem" style="margin-bottom: 100px;">
@@ -101,13 +116,22 @@
 							<p>Tot de rust van maandag er weer is.</p>
 						</div>
 
-						<div class="poem" style="margin-bottom: 100px;">
+						<div class="poem explicit" style="margin-bottom: 100px;">
+							<p>Bedenk eens voor de gein,</p>
+							<p>Hoe het zou zijn,</p>
+							<p>Als we in plaats van water bij de wijn,</p>
+							<p>De fles in onze reet drukken</p>
+						</div>
+
+						<div class="poem explicit" style="margin-bottom: 100px;">
 							<p>Om de tijd te doden,</p>
 							<p>Pakte ik een boek,</p>
 							<p>Toen toch een puzzel,</p>
 							<p>En uiteindelijk de Kalasjnikov uit de hoek.</p>
 						</div>
-
+						
+						<!-- "Alle gedichten" link to show explicit poems -->
+						<a href="#" id="showExplicit">alle gedichten</a>
 					</div>
 					
 				</div> <!-- END fh5co-narrow-content -->
@@ -121,5 +145,15 @@
 		<script src="js/jquery.waypoints.min.js"></script>
 		<script src="js/jquery.flexslider-min.js"></script>
 		<script src="js/main.js"></script>
+		<script>
+			$(document).ready(function(){
+				// When the link "alle gedichten" is clicked, show the hidden explicit poems
+				$("#showExplicit").click(function(e){
+					e.preventDefault();
+					$(".explicit").slideDown();
+					$(this).fadeOut(); // Hide the link once explicit poems are shown
+				});
+			});
+		</script>
 	</body>
 </html>
